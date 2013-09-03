@@ -6,8 +6,10 @@ how much time it will take them to read a piece of text.
 
 The library is really simple to use.
 All you need to do is call the function estimate, giving it a CSS selector.
+Example:
+read.estimate('.article-content, #news');
+
 The library will observe the content in the selected elements and return an estimated time for reading it.
 
 NEXT VERSIONS will include configurations for different levels of readers. 
-For example, if a user with browser locale of He/IL (Hebrew) opens a page in English, 
-it will take him more time to read it that a native English speaker.
+For example, if a user with browser locale of He/IL (Hebrew) opens a page in English, it will take him more time to read the content than a native English speaker.

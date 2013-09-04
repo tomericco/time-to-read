@@ -8,13 +8,10 @@
 	    
 	</style>
 	
-	<script type="text/javascript" src="lib/jquery.min.js"></script>
-	<script type="text/javascript" src="js/reader.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/Reader.js"></script>
 </head>
 <body>
-
-<p>This is my web page</p>
-
 <div id="estimation"></div>
 <div id="content"></div>
 
@@ -22,13 +19,15 @@
     var appKey = '77314abc446ea07acf309af542a925d2:5:68077325';
     
     // Request some data using NY Times news API
-    jQuery.getJSON({
+    jQuery.ajax({
         url: 'http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=' + appKey + '&limit=1',
+        type: "GET",
+        contentType: 'application/json',
         success: function handleResponse(data) {
             var article = data;
             debugger;
             jQuery('#content').html(article);
-            jQuery('#estimation').html(Reader ? ('Estimated time to read is: ' + Reader.estimate('#content') + '.') : 'Could not load estimate reading time.');
+            jQuery('#estimation').html('Estimated time to read is: ' + Reader.estimate('#content') + '.'));
         }
     });
 </script>

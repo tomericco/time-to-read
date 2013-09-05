@@ -5,31 +5,81 @@
 	<title>Using time-to-read example</title>
 	
 	<style>
+	    body {
+	        background-color: #D4E7ED;
+	        color: #74A6BD;
+	        font-family: "Skolar Regular",Palatino,"Cambria","Droid Serif","Georgia","Times New Roman","Times",serif;
+	        font-size: 18px;
+	        
+	    }
 	    
+	    h1 {
+	        text-align: center;
+	    }
+	    
+	    #content {
+	        color: #000000;
+	        margin: auto;
+	        width: 50%;
+	    }
+	    
+	    #estimation {
+	        color: #000000;
+	        margin: auto;
+	        text-align: center;
+	        font-size: 14px;
+	        font-style: italic;
+	    }
 	</style>
 	
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/Reader.js"></script>
 </head>
 <body>
+<h1>time-to-read example</h1>
+</br></br></br>
 <div id="estimation"></div>
-<div id="content"></div>
+</br></br>
+<div id="content">
+President Obama notched several incremental victories this week in his push for congressional approval of a strike in Syria -- winning the support of congressional leaders and, on Wednesday, the backing of a key Senate panel. 
+But the president and his allies on the Hill are facing evident headwinds from rank-and-file members still not convinced that it's in the U.S. interest to launch missiles at Syria. 
+"It's going to be very difficult for [the president] to convince me the United States should be involved," Rep. Matt Salmon, R-Ariz., told FoxNews.com. "I'm not seeing any threat to our national security." 
+Some of the strongest voices in opposition are coming from the Republican wing of Capitol Hill. Secretary of State John Kerry got a grilling from skeptical Republicans during the House Foreign Affairs Committee hearing on Wednesday afternoon; the hearing was far more contentious than one on the Senate side a day earlier. 
+While leaders of the Republican-led House said Tuesday they would support a strike as punishment for Syrian President Bashar Assad's recent chemical weapons attack, many conservative members are openly opposed -- or at least undecided. 
+Salmon made his comments minutes before the start of the House Foreign Affairs Committee hearing. The congressman also said the administration doesn't appear to have the House votes right now. 
+"I don't think a majority of the Republican conference will support this," Salmon said. "And I suspect some Democrats will defect." 
+Earlier in the day, Michigan Republican Rep. Justin Amash tweeted: "If members of Congress care at all what constituents think, they will not authorize strikes in #Syria. "Never seen an action w/ less support." 
+On Monday, South Carolina Republican Reps. Trey Gowdy and Jeff Duncan also said they did not support a strike.   
+"The case has not been made to me of why the United States should be involved in Syria," Gowdy said at a home state rally he attended with Duncan, according to the Greenville (S.C.) News. 
+"I don't see where any imminent threat to the United States is evident," Duncan said. 
+The comments reflect numerous polls which show a strike in Syria does not enjoy widespread popularity among the public. The administration is arguing that it is still in the U.S. interest to respond, because inaction would embolden America's enemies to use chemical weapons again. 
+Duncan got into a tense exchange with Kerry on Wednesday at the House hearing during which he suggested Syria was an attempted diversion from the administration's lingering credibility problems over such issues as the fatal Benghazi terror attack and the failed Fast and Furious gun-tracking operation. 
+"We're talking about gassing people, and you're talking about Fast and Furious," a visibly agitated Kerry responded. 
+Other House members also expressed their opposition at the hearing. 
+"This will not stop the butchery and the killing," said Pennsylvania Republican Rep. Thomas Marino. "So what is the end game?" 
+Liberal Democrats are also raising concerns. During Tuesday's Senate hearing, one of the toughest questioners was Sen. Tom Udall, D-N.M. 
+Still, the Senate Foreign Relations Committee approved a resolution on Wednesday that supports a limited strike. And Senate Majority Leader Harry Reid, D-Nev., has voiced his support as well. 
+The only holdout among congressional leaders appears to be Senate Minority Leader Mitch McConnell, who, after meeting Tuesday with Obama, said: "Congress and our constituents would all benefit from knowing more about what it is he thinks needs to be done -- and can be accomplished -- in Syria and the region." 
+McConnell, R-Ky., is facing a tough re-election effort in 2014 with a strong challenge from the right. All House members face re-election next year, though they do not have to worry about any this fall. 
+Amash and Salmon are among several House members who have butted heads with House leadership and show no indication of going along this time with House Speaker John Boehner and Majority Leader Eric Cantor, who have expressed their support for a strike.
+</div>
 
 <script>
-    var appKey = '77314abc446ea07acf309af542a925d2:5:68077325';
+    jQuery('#estimation').html('Estimated time to read is: ' + Reader.estimate('#content') + ' minutes.');
+    // var appKey = '77314abc446ea07acf309af542a925d2:5:68077325';
     
     // Request some data using NY Times news API
-    jQuery.ajax({
-        url: 'http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=' + appKey + '&limit=1',
-        type: "GET",
-        contentType: 'application/json',
-        success: function handleResponse(data) {
-            var article = data;
-            debugger;
-            jQuery('#content').html(article);
-            jQuery('#estimation').html('Estimated time to read is: ' + Reader.estimate('#content') + '.');
-        }
-    });
+    // jQuery.ajax({
+    //     url: 'http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=' + appKey + '&limit=1',
+    //     type: "GET",
+    //     contentType: 'application/json',
+    //     success: function handleResponse(data) {
+    //         var article = data;
+    //         debugger;
+    //         jQuery('#content').html(article);
+    //         jQuery('#estimation').html('Estimated time to read is: ' + Reader.estimate('#content') + 'minutes.');
+    //     }
+    // });
 </script>
 
 </body>

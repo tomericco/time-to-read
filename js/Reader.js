@@ -38,7 +38,7 @@ var Reader = (function () {
             // Turn into minutes
             totalTime /= 60;
             
-            return totalTime > 1 ? totalTime : Math.round(totalTime);
+            return totalTime < 1 ? totalTime : Math.round(totalTime);
         }
     };
     

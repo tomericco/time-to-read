@@ -35,7 +35,10 @@ var Reader = (function () {
                 totalTime += time;
             }
             
-            return totalTime / 60;
+            // Turn into minutes
+            totalTime /= 60;
+            
+            return totalTime > 1 ? totalTime : Math.round(totalTime);
         }
     };
     

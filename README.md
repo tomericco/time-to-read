@@ -7,7 +7,7 @@ how much time it will take them to read a piece of text.
 The library is really simple to use.
 All you need to do is call the function estimate, giving it a CSS selector.
 Example:
-<code>reader.estimate('.article-content, #news');</code>
+<code>Reader.estimate('.article-content, #news');</code>
 
 The library will observe the content in the selected elements and return an estimated time for reading it.
 

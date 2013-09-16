@@ -1,4 +1,13 @@
 var Reader = (function () {
+    var sentenceTime = (function getTimeAccordingLocale() {
+        var language = window.navigator.userLanguage || window.navigator.language;
+        
+        if (language === 'en-US') {
+            return 5;
+        } else {
+            return 8;
+        }
+    })();
     
     /*
      * Gets an DOM element and anaylzes it's textual reading content.
@@ -11,8 +20,8 @@ var Reader = (function () {
             time = 0;
         
         for (i = 0; i < sentences.length; i++) {
-            // Each sentence assumed to be read in 7 seconds. Basic calc.
-            time += 7;
+            // Each sentence assumed to be read in constant time. Basic calc.
+            time += sentenceTime;
         }
         
         return time;
